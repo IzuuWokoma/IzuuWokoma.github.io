@@ -1,11 +1,15 @@
+/* ============================= */
 /* General Reset */
+/* ============================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ============================= */
 /* Body Styling */
+/* ============================= */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fff5f8; /* soft blush background */
@@ -14,7 +18,9 @@ body {
   padding: 0 1.5rem;
 }
 
+/* ============================= */
 /* Header */
+/* ============================= */
 header {
   text-align: center;
   padding: 2rem 1rem;
@@ -33,24 +39,35 @@ header p {
   font-style: italic;
 }
 
-/* Navigation */
+/* ============================= */
+/* Navigation (Flexbox) */
+/* ============================= */
 nav {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #a6004c;
+  padding: 1rem;
+  border-radius: 8px;
   margin: 1rem 0;
 }
 
 nav a {
-  color: #a6004c;
+  color: #fff;
   text-decoration: none;
   margin: 0 0.8rem;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #ff4081;
+  color: #ffb6c1;
 }
 
+/* ============================= */
 /* Sections */
+/* ============================= */
 main section {
   margin: 2rem 0;
   padding: 1.5rem;
@@ -77,7 +94,30 @@ article h3 {
   font-size: 1.3rem;
 }
 
+/* ============================= */
+/* GRID for Best Sellers Section */
+/* ============================= */
+main section:nth-of-type(2) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+main section:nth-of-type(2) article {
+  background: #fff5f8;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+main section:nth-of-type(2) article:hover {
+  transform: translateY(-5px);
+}
+
+/* ============================= */
 /* Order Form */
+/* ============================= */
 form {
   margin-top: 1rem;
   background: #fff0f5;
@@ -119,7 +159,9 @@ form button:hover {
   background: #ff4081;
 }
 
+/* ============================= */
 /* Footer */
+/* ============================= */
 footer {
   text-align: center;
   padding: 1rem;
@@ -128,3 +170,49 @@ footer {
   font-size: 0.9rem;
   color: #5a2d34;
 }
+
+/* ============================= */
+/* RESPONSIVENESS */
+/* ============================= */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  form {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  nav {
+    font-size: 0.9rem;
+  }
+
+  form button {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
